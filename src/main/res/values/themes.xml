@@ -1,0 +1,21 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Products" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/MacRed</item>
+        <item name="colorPrimaryVariant">@color/MacRed</item>
+        <item name="colorOnPrimary">@color/MacYellow</item>
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+
+        <!-- Custom Font. -->
+        <item name="android:fontFamily">@font/tajawal_medium</item>
+    </style>
+
+    <style name="Theme.Products.NoActionBar" parent="Theme.Products">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+</resources>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Porcelain"
+    android:orientation="vertical"
+    tools:context=".ui.SettingsActivity">
+
+    <LinearLayout
+        android:id="@+id/settings_ll_1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/settings_ll_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/settings_btn_show_purchases"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:layout_weight="1"
+            android:onClick="showAllPurchases"
+            android:paddingVertical="25dp"
+            android:text="Show All Purchases"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            app:icon="@drawable/ic_cart"
+            app:iconGravity="top" />
+
+        <Button
+            android:id="@+id/settings_btn_show_last_purchase"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:layout_weight="1"
+            android:onClick="showLastPurchase"
+            android:paddingVertical="25dp"
+            android:text="Show Last Purchase"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            app:icon="@drawable/ic_last_purchase"
+            app:iconGravity="top" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/settings_ll_2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/settings_ll_3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/settings_ll_1">
+
+        <Button
+            android:id="@+id/settings_btn_change_pass"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:layout_weight="1"
+            android:onClick="changePassword"
+            android:paddingVertical="25dp"
+            android:text="Change Password"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            app:icon="@drawable/ic_password"
+            app:iconGravity="top" />
+
+        <Button
+            android:id="@+id/settings_btn_clear_purchases"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:layout_weight="1"
+            android:onClick="clearAllPurchases"
+            android:paddingVertical="25dp"
+            android:text="Clear All Purchase"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            app:icon="@drawable/ic_clear"
+            app:iconGravity="top" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/settings_ll_3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/settings_ll_2">
+
+        <Button
+            android:id="@+id/settings_btn_add_item"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:layout_weight="1"
+            android:onClick="addItem"
+            android:paddingVertical="25dp"
+            android:text="Add New Item"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            app:icon="@drawable/ic_add"
+            app:iconGravity="top" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+

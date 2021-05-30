@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".ui.DetailsActivity">
+
+    <ImageView
+        android:id="@+id/details_iv_product_img"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_margin="30dp"
+        android:adjustViewBounds="true"
+        android:paddingHorizontal="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <Button
+        android:id="@+id/details_btn_decrease_number"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/left_circular"
+        android:text="-"
+        app:layout_constraintEnd_toStartOf="@+id/details_et_products_number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/details_iv_product_img" />
+
+    <EditText
+        android:id="@+id/details_et_products_number"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/MacRed"
+        android:gravity="center"
+        android:inputType="number"
+        android:text="1"
+        android:textColor="@color/MacYellow"
+        app:layout_constraintEnd_toStartOf="@+id/details_btn_increase_number"
+        app:layout_constraintStart_toEndOf="@+id/details_btn_decrease_number"
+        app:layout_constraintTop_toBottomOf="@+id/details_iv_product_img" />
+
+    <Button
+        android:id="@+id/details_btn_increase_number"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="150dp"
+        android:background="@drawable/right_circular"
+        android:text="+"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/details_et_products_number"
+        app:layout_constraintTop_toBottomOf="@+id/details_iv_product_img" />
+
+    <TextView
+        android:id="@+id/details_tv_product_full_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="@string/coin_type"
+        app:layout_constraintEnd_toStartOf="@+id/details_tv_one_product"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/details_btn_decrease_number" />
+
+    <TextView
+        android:id="@+id/details_tv_one_product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="@string/one_product_str"
+        app:layout_constraintEnd_toStartOf="@+id/details_tv_product_price_section"
+        app:layout_constraintStart_toEndOf="@id/details_tv_product_full_price"
+        app:layout_constraintTop_toBottomOf="@+id/details_et_products_number" />
+
+    <TextView
+        android:id="@+id/details_tv_product_price_section"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="@string/purchase_price"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/details_tv_one_product"
+        app:layout_constraintTop_toBottomOf="@id/details_btn_increase_number" />
+
+
+    <TextView
+        android:id="@+id/details_tv_products_full_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="@string/coin_type"
+        app:layout_constraintStart_toEndOf="@+id/details_tv_all_products"
+        app:layout_constraintStart_toStartOf="@+id/details_tv_product_full_price"
+        app:layout_constraintTop_toBottomOf="@+id/details_tv_product_full_price" />
+
+    <TextView
+        android:id="@+id/details_tv_all_products"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="@string/all_products_str"
+        app:layout_constraintStart_toStartOf="@+id/details_tv_one_product"
+        app:layout_constraintTop_toBottomOf="@+id/details_tv_one_product" />
+
+    <TextView
+        android:id="@+id/details_tv_product_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="@string/unit_details"
+        app:layout_constraintTop_toBottomOf="@id/details_tv_all_products" />
+
+    <EditText
+        android:id="@+id/details_et_product_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:maxHeight="250dp"
+        android:minHeight="100dp"
+        app:layout_constraintTop_toBottomOf="@id/details_tv_product_description" />
+
+    <Button
+        android:id="@+id/details_btn_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:text="حفظ"
+        app:layout_constraintTop_toBottomOf="@id/details_et_product_description" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Dark Restaurant</string>
+    <string name="full_name_str">Full Name</string>
+    <string name="email_address_str">Email Address</string>
+    <string name="username_str">Username</string>
+    <string name="birthdate_str">BirthDate</string>
+    <string name="pass_str">Pass</string>
+    <string name="re_pass_str">Re-Pass</string>
+    <string name="country_str">Country</string>
+    <string name="phone_str">Phone</string>
+    <string name="is_administrator_str">Is Administrator</string>
+    <string name="male_str">Male</string>
+    <string name="female_str">Female</string>
+    <string name="button_str">Button</string>
+    <string name="todo">TODO</string>
+    <string name="save_str">Save</string>
+    <string name="name_str">Name</string>
+
+
+    <array name="country_list">
+        <item>PS</item>
+        <item>US</item>
+        <item>EG</item>
+        <item>DA</item>
+    </array>
+
+    <string name="coin_type">شيكل</string>
+    <string name="one_product_str">سعر الوحدة :</string>
+    <string name="all_products_str">سعر الجميع :</string>
+    <string name="purchase_price">السعر عند الإختيار</string>
+    <string name="number_str">العدد</string>
+    <string name="unit_details">تفاصيل الصنف</string>
+    <string name="search_str">ابحث من هنا</string>
+    <string name="settings_str">Settings</string>
+    <string name="log_out_str">Log out</string>
+
+
+</resources>
