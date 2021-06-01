@@ -10,16 +10,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.SearchView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.products.R;
 import com.example.products.adapter.ProductAdapter;
 import com.example.products.model.PayType;
-import com.example.products.model.Product;
 
 public class MainListActivity extends AppCompatActivity {
 
@@ -31,16 +30,16 @@ public class MainListActivity extends AppCompatActivity {
         // get needed views by id
         LinearLayout ll_cash_filter = findViewById(R.id.main_ll_pay_type);
 
-        ListView lv_products = findViewById(R.id.main_lv_products);
+        RecyclerView rv_products = findViewById(R.id.main_rv_products);
 
         SearchView sv = findViewById(R.id.main_sv);
 
         CheckBox cb_enable_cash = findViewById(R.id.main_cb_enable_cash);
         CheckBox cb_enable_takseet = findViewById(R.id.main_cb_enable_takseet);
 
-        // create and set products adapter in the list view
-        ProductAdapter<Product> productAdapter = new ProductAdapter<>(this);
-        lv_products.setAdapter(productAdapter);
+        // create and set products adapter in the recycle view
+        ProductAdapter productAdapter = new ProductAdapter(this);
+        rv_products.setAdapter(productAdapter);
 
         // set listeners actions
         sv.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -71,18 +70,9 @@ public class MainListActivity extends AppCompatActivity {
         cb_enable_takseet.setOnCheckedChangeListener((buttonView, isChecked) -> {
             filter(productAdapter, sv.getQuery(), cb_enable_cash.isChecked(), isChecked);
         });
-
-        lv_products.setOnItemClickListener((parent, view, position, id) -> {
-            // details listener
-            Product product = (Product) lv_products.getAdapter().getItem(position);
-            Intent intent = new Intent(this, DetailsActivity.class);
-            intent.putExtra("product", product);
-            this.startActivity(intent);
-        });
-
     }
 
-    public void filter(ProductAdapter<Product> adapter, CharSequence constraint,
+    public void filter(ProductAdapter adapter, CharSequence constraint,
                        boolean enableCash, boolean enableTakseet) {
         if ((enableCash && enableTakseet) || (!enableCash && !enableTakseet)) {
             adapter.setFilterPayType(PayType.BOTH);

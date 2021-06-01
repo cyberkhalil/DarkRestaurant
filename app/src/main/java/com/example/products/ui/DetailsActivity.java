@@ -51,6 +51,7 @@ public class DetailsActivity extends AppCompatActivity {
         // fill information
         getSupportActionBar().setTitle(product.getName());
         tv_product_full_price.setText(product.getFullPriceString());
+        tv_products_full_price.setText(product.getFullPriceString());
         iv_product_img.setImageDrawable(product.getImgDrawable(this));
 
         // set listeners actions

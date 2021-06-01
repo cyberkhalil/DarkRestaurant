@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/Porcelain"
     android:orientation="vertical"
     android:padding="10dp"
     tools:context=".ui.MainListActivity">
@@ -27,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
             android:text="كاش"
-            android:textSize="25sp" />
+            android:textSize="20sp" />
 
         <CheckBox
             android:id="@+id/main_cb_enable_takseet"
@@ -35,13 +37,14 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
             android:text="التقسيط"
-            android:textSize="25sp" />
+            android:textSize="20sp" />
 
     </LinearLayout>
 
-    <ListView
-        android:id="@+id/main_lv_products"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/main_rv_products"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
 </LinearLayout>

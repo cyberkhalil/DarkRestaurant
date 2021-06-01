@@ -13,11 +13,11 @@ public final class Restaurant {
 
     static {
         products.add(new Product(0, "فتة غزاوية مع دجاج فرن", 100,
-                "شيكل", PayType.CASH, R.drawable.img_1));
+                "₪", PayType.CASH, R.drawable.img_1));
         products.add(new Product(1, "بطاطا مقلية", 20,
-                "شيكل", PayType.TAKSEET, 1));
+                "₪", PayType.TAKSEET, 1));
         products.add(new Product(2, "باذنجان محمر", 15,
-                "شيكل", PayType.BOTH, R.drawable.not_found));
+                "₪", PayType.BOTH, R.drawable.not_found));
         purchases.add(new Purchase(0, "test", "بطاطا مقلية",
                 Calendar.getInstance().getTime(), 5.6));
     }

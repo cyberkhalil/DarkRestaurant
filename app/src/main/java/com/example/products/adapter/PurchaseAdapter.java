@@ -4,8 +4,10 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.products.R;
 import com.example.products.model.Purchase;
@@ -13,7 +15,7 @@ import com.example.products.model.Restaurant;
 
 import java.util.ArrayList;
 
-public class PurchaseAdapter<I extends Purchase> extends BaseAdapter {
+public class PurchaseAdapter extends RecyclerView.Adapter<PurchaseAdapter.PurchaseViewHolder> {
     private final Context context;
     private final ArrayList<Purchase> purchases;
 
@@ -22,38 +24,41 @@ public class PurchaseAdapter<I extends Purchase> extends BaseAdapter {
         this.purchases = Restaurant.getPurchases(username);
     }
 
+    @NonNull
     @Override
-    public int getCount() {
+    public PurchaseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        // Inflate the layout
+        View view = LayoutInflater.from(context)
+                .inflate(R.layout.card_purchase, parent, false);
+
+        return new PurchaseViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull PurchaseViewHolder holder, int position) {
+        Purchase purchase = purchases.get(position);
+
+        holder.tv_name.setText(purchase.getName());
+        holder.tv_price.setText(purchase.getFullPriceString());
+        holder.tv_date.setText(purchase.getDateFormatted());
+    }
+
+    @Override
+    public int getItemCount() {
         return purchases.size();
     }
 
-    @Override
-    public Purchase getItem(int position) {
-        return purchases.get(position);
-    }
-
-    @Override
-    public long getItemId(int position) {
-        return purchases.get(position).getId();
-    }
-
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        if (convertView == null) {
-            convertView = LayoutInflater.from(context).inflate(R.layout.card_purchase, parent, false);
-        }
-
+    static class PurchaseViewHolder extends RecyclerView.ViewHolder {
         // inflate
-        TextView tv_name = convertView.findViewById(R.id.card_purchase_tv_name);
-        TextView tv_price = convertView.findViewById(R.id.card_purchase_tv_price);
-        TextView tv_date = convertView.findViewById(R.id.card_purchase_tv_date);
+        TextView tv_name;
+        TextView tv_price;
+        TextView tv_date;
 
-        // fill view from object
-        Purchase purchase = getItem(position);
-        tv_name.setText(purchase.getName());
-        tv_price.setText(purchase.getFullPriceString());
-        tv_date.setText(purchase.getDateFormatted());
-
-        return convertView;
+        public PurchaseViewHolder(@NonNull View itemView) {
+            super(itemView);
+            tv_name = itemView.findViewById(R.id.card_purchase_tv_name);
+            tv_price = itemView.findViewById(R.id.card_purchase_tv_price);
+            tv_date = itemView.findViewById(R.id.card_purchase_tv_date);
+        }
     }
 }

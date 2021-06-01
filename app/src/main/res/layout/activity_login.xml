@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:paddingHorizontal="80dp"
-        android:paddingTop="40dp">
+        android:paddingTop="30dp">
 
         <ImageView
             android:id="@+id/login_img_logo"
@@ -21,7 +21,8 @@
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
             android:layout_marginBottom="50dp"
-            tools:srcCompat="@drawable/ic_logo" />
+            app:srcCompat="@drawable/login_img_logo"
+            tools:srcCompat="@drawable/login_img_logo" />
 
         <EditText
             android:id="@+id/login_et_username"
@@ -31,7 +32,8 @@
             android:ems="10"
             android:hint="Username"
             android:inputType="textPersonName"
-            android:textColorHint="@color/white"
+            android:textColor="@color/Porcelain"
+            android:textColorHint="@color/Porcelain"
             android:textSize="20sp" />
 
         <EditText
@@ -40,9 +42,9 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:ems="10"
-            android:textColor="@color/Porcelain"
             android:hint="************"
             android:inputType="textPassword"
+            android:textColor="@color/Porcelain"
             android:textColorHint="@color/Porcelain"
             android:textSize="20sp" />
 
@@ -50,39 +52,41 @@
             android:id="@+id/login_cb_remember"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
             android:text="remember me"
-            android:textColor="@color/white"
+            android:textColor="@color/Porcelain"
             android:textSize="20sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingBottom="20dp">
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/login_btn_login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
                 android:layout_weight="1"
                 android:background="@color/Porcelain"
                 android:text="Login"
-                android:textColor="@color/MacRed"
-                app:backgroundTint="@null"
                 android:textAllCaps="false"
-                android:textSize="20sp" />
+                android:textColor="@color/MacRed"
+                android:textSize="20sp"
+                app:backgroundTint="@null" />
 
             <Button
                 android:id="@+id/login_btn_register"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
                 android:layout_weight="1"
                 android:background="@color/Porcelain"
                 android:text="Register"
-                android:textColor="@color/MacRed"
                 android:textAllCaps="false"
-                app:backgroundTint="@null"
-                android:textSize="20sp" />
+                android:textColor="@color/MacRed"
+                android:textSize="20sp"
+                app:backgroundTint="@null" />
         </LinearLayout>
 
 
